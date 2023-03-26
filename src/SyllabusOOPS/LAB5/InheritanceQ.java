@@ -1,13 +1,28 @@
 package SyllabusOOPS.LAB5;
 
 public class InheritanceQ {
+    public static void main(String[] args) {
+        area circle= new area(6);
+        area triangle= new area(6,8,10);
+        area rectangle = new area(5,7);
+        area square = new area();
+        square.areaSquare(9);
+
+        perimeter circle1 = new perimeter(1);
+        perimeter triangle1 = new perimeter(7,8,9);
+        perimeter rectangle1 = new perimeter(9,3);
+        perimeter square1 = new perimeter();
+        square1.perimeterSquare(8);
+
+
+    }
 }
 
 class shape{
     double radius;
-    double side1;
-    double side2;
-    double side3;
+    double firstSide;
+    double secondSide;
+    double thirdSide;
     double length;
     double bredth;
     double side;
@@ -16,9 +31,9 @@ class shape{
         radius=r;
     }
     shape(double side1,double side2,double side3){
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+        this.firstSide = side1;
+        this.secondSide = side2;
+        this.thirdSide = side3;
 
     }
     shape(double length,double bredth){
@@ -32,24 +47,24 @@ class shape{
 
 class area extends shape{
     area() {}
-    area(double l, double b) {
-        super(l, b);
-        System.out.println(l*b);
+    area(double len, double bred) {
+        super(len, bred);
+        System.out.println(length*bredth);
     }
 
-    area(double r){
-        super(r);
-        System.out.println(3.14*r*r);
+    area(double rad){
+        super(rad);
+        System.out.println(3.14*radius*radius);
     }
-    area(double s1, double s2,double s3){
-        super(s1,s2,s3);
-        double s = (side1+side2+side3)/2.0;
-        double a = s*(s-side1)*(s-side2)*(s-side3);
+    area(double side1, double side2,double side3){
+        super(side1,side2,side3);
+        double s = (firstSide+secondSide+thirdSide)/2.0;
+        double a = s*(s-firstSide)*(s-secondSide)*(s-thirdSide);
         double area = Math.sqrt(a);
         System.out.println(area);
     }
 
-    public void areaSq(double side){
+    public void areaSquare(double side){
         System.out.println(side*side);
     }
 
@@ -58,40 +73,23 @@ class area extends shape{
 
 class perimeter extends shape{
     perimeter(){}
-    perimeter(double l, double b) {
-        super(l,b);
+    perimeter(double len, double bred) {
+        super(len,bred);
         System.out.println(2*(length+bredth));
     }
 
-    perimeter(double r) {
-        super(r);
-        System.out.println(2*3.14*r);
+    perimeter(double rad) {
+        super(rad);
+        System.out.println(2*3.14*rad);
     }
     perimeter(double s1,double s2,double s3){
         super(s1,s2,s3);
-        System.out.println(s1+s2+s3);
+        System.out.println(firstSide+secondSide+thirdSide);
     }
 
-    public void perSq(double side){
+    public void perimeterSquare(double side){
         System.out.println(4*side);
     }
 
 }
-class use{
-    public static void main(String[] args) {
-        area circle= new area(10);
-        area triangle= new area(3,4,5);
-        area rectangle = new area(10,20);
-        area square = new area();
-        square.areaSq(5);
 
-        perimeter circle1 = new perimeter(5);
-        perimeter triangle1 = new perimeter(5,3,4);
-        perimeter rectangle1 = new perimeter(5,4);
-        perimeter square1 = new perimeter();
-        square1.perSq(5);
-
-
-    }
-
-}

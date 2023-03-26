@@ -3,8 +3,6 @@ package SyllabusOOPS.LAB5;
 import java.util.Scanner;
 
 public class RetailStore {
-    //if ID == 1001 then its PrevilegedCustomer otherwise RegularCustomer
-
 //    final int ID1 = 1001;//ID of silver membership
 //    final int ID2 = 1002;//ID of gold membership
 //    final int ID3 = 1003;//ID of platinum membership
