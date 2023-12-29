@@ -20,4 +20,9 @@ public class Student {
     public void setRoll(int roll){
         this.roll = roll;
     }
+
+
+    public static void main(String[] args) {
+        int name = 2;
+    }
 }

@@ -12,10 +12,10 @@ public class TakingInput {
             return;
         }
 
-        elem.data = el;
 
         elem.left = new BinaryTree_Node<>();
         take_input(elem.left);
+        elem.data = el;
         elem.right = new BinaryTree_Node<>();
         take_input(elem.right);
 
@@ -42,6 +42,9 @@ public class TakingInput {
 //        elem.right.data = s.nextInt();
 //    }
 
+
+
+
     public static void print(BinaryTree_Node<Integer> root ){
         if(root == null){
             return;
@@ -55,18 +58,13 @@ public class TakingInput {
         System.out.println();
         print(root.left);
         print(root.right);
-
     }
+
 
     public static void main(String[] args) {
         BinaryTree_Node<Integer> n1 = new BinaryTree_Node<>();
         take_input(n1);
         print(n1);
-        numNodes(n1);
-
-    }
-
-
-
+   }
 }
 
